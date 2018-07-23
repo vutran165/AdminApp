@@ -1,5 +1,9 @@
+<div class="wrapper">
+<app-menu class="sidebar"  [@slideInOut]="menuState"></app-menu>
 
-DONE
-DONEDONE
-DONEDONEDONE
-DONEDONEDONE
+<div class="main-content">
+    <button class="btn" (click)="toggleMenu()">
+        <span class="badge badge-primary">toggle menu</span>
+</button>
+</div>
+</div> 
