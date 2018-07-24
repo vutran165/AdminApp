@@ -13,7 +13,8 @@ export class SidebarToggleDirective{
     @HostListener('click', ['$event'])
     toggleOpen($event: any) {
         $event.preventDefault();
-        document.querySelector('body').classList.toggle('sidebar-hidden');
+        document.querySelector('.sidebar').classList.toggle('sidebar-hidden');
+        document.querySelector('.main-container').classList.toggle('main-container-all');
     }
 
 }

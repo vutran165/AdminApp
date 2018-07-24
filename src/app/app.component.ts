@@ -7,6 +7,9 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  // this approach is using animations way
+  //
+  //
   // animations: [
   //   trigger('slideInOut', [
   //     state('out', style({
@@ -23,7 +26,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'app';
 
-  public menuState: string = 'out';
+ // public menuState: string = 'out';
 
   // toggleMenu() {
   //   this.menuState = this.menuState === 'out' ? 'in' : 'out';

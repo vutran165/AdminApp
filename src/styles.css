@@ -1,22 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-httml, body {
-    height: 100%;
-    width: 100%;
-    
-}
+httml {
+    height: 100% ;     
+    /* width: 100% ; */
+    padding: 0;
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
+}
 
 .wrapper {
     width: 100%;
     height: 100%;
+
 }
 
-.main-content {
+.main-container {
     float: right;
     width: 80%;
     height: 100%;
+    position: relative;
 }
 
 .sidebar {
@@ -26,12 +30,25 @@ httml, body {
     position: relative;
     width: 20%;
     height: 100%;
-    /* z-index: 9999; */
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+ 
+   
 }
 
 
 .sidebar-hidden {
     margin-left: 0%;
     display: none;
+}
+
+.main-container-all {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+ul {
+    /* font-size: 18px; */
+    line-height: 3;
+    font-weight: 400;
+    padding-top: 5%;
+    list-style: none;
 }

@@ -1,33 +1,31 @@
-<div class="wrapper">
-<app-menu></app-menu>
-<div class="main-content">
-      
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
-            <!-- <button class="btn" (click)="toggleMenu()">
-                    <span class=""><fa-icon [icon]="faAlignLeft"></fa-icon></span>
-            </button> -->
-
-            <button class="btn" type="button" appSidebarToggle>
-                    <span class=""><fa-icon [icon]="faAlignLeft"></fa-icon></span>
-            </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
+<section class="wrapper">
+    <app-menu></app-menu>
+    <div class="main-container">
+        
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+              
+                <button class="btn" type="button" appSidebarToggle>
+                        <span class=""><fa-icon [icon]="faAlignLeft"></fa-icon></span>
+                </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        
+                    </li>
+                    <li class="nav-item">
                     
-                </li>
-                <li class="nav-item">
-                   
-                </li>
-                <li class="nav-item dropdown">
-                  
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-               
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><fa-icon [icon]="faUser"></fa-icon></button>
-            </form>
-        </div>
-    </nav>
-    
-</div>
-</div> 
+                    </li>
+                    <li class="nav-item dropdown">
+                    
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><fa-icon [icon]="faUser"></fa-icon></button>
+                </form>
+            </div>
+        </nav>
+        
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+</section> 
