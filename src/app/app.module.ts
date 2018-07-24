@@ -7,12 +7,18 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarToggleDirective } from './directives/sidebar.directive';
 
+const APP_DIRECTIVES = [
+  SidebarToggleDirective,
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    APP_DIRECTIVES
   ],
   imports: [
    
@@ -20,6 +26,7 @@ import { RoutingModule } from './app-routing.module';
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
