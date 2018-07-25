@@ -1,0 +1,64 @@
+.sidebar-header {
+    height: 54px;
+    width: 100%;
+
+}
+
+.sidebar-main {
+    /* height: 80%; */
+    width: 100%;
+    border-radius: 0;
+    z-index: 1000;
+    border: none;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+    background-color: #222;
+}
+
+.sidebar .list-group a.list-group-item {
+    background: #222;
+    border: 0;
+    border-radius: 0;
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar .list-group a.list-group-item > fa-icon {
+    margin-right: 10px;
+}
+
+.sidebar .list-group a:hover {
+    background: #151515;
+    color: #fff;
+}
+
+.nested-menu .list-group-item {
+    cursor: pointer;
+}
+
+.nested-menu .nested {
+    list-style-type: none;
+}
+
+.nested-menu ul.submenu {
+    display: none;
+    height: 0;
+}
+
+.nested-menu .expand ul.submenu {
+    display: block;
+    list-style-type: none;
+    height: auto;
+}
+
+.nested-menu .expand ul.submenu li a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar-footer {
+    /* height: 10%;     */
+    width: 100%;
+}

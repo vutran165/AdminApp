@@ -1,12 +1,42 @@
 <div class="sidebar">
-    <ul>
-        <li>Menu Item 1</li>
-        <li>Menu Item 2</li>
-        <li>Menu Item 3</li>
-        <li>Menu Item 4</li>
-        <li>Menu Item 5 </li>
-        <li>Menu Item 6</li>
-      </ul>  
+    <div class="sidebar-header">
+
+    </div>
+    <div class="sidebar-main">
+           <div class="list-group">
+               <a class="list-group-item">
+                   <fa-icon [icon]="faTh"></fa-icon>
+                   &nbsp;Dashboard
+               </a>
+               <a class="list-group-item">
+                   <fa-icon [icon]="faChartBar"></fa-icon>
+                   &nbsp;Menu 1
+               </a>
+               <a class="list-group-item">
+                    <fa-icon [icon]="faServer"></fa-icon>
+                    &nbsp;Menu 2
+               </a>
+               <div class="nested-menu">
+                   <a class="list-group-item" (click)="addExpandClass('pages')">SubMenu</a>
+                   <li class="nested" [class.expand]="showMenu === 'pages'">
+                        <ul class="submenu">
+                            <li>
+                                <a href="#">Sub menu 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Sub menu 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Sub menu 3</a>
+                            </li>
+                        </ul>
+                   </li>
+               </div>
+           </div>
+    </div>
+    <div class="sidebar-footer">
+
+    </div>
     
 </div>
 
