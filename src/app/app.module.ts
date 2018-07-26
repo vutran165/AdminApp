@@ -9,6 +9,11 @@ import { MenuComponent } from './menu/menu.component';
 import { RoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarToggleDirective } from './directives/sidebar.directive';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserComponent } from './user/user.component';
+import { ProductComponent } from './product/product.component';
+import { TypeProductComponent } from './type-product/type-product.component';
+import { LayoutModule } from './layout/layout.module';
 
 const APP_DIRECTIVES = [
   SidebarToggleDirective,
@@ -17,12 +22,10 @@ const APP_DIRECTIVES = [
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    APP_DIRECTIVES
+    APP_DIRECTIVES,
   ],
   imports: [
-   
-    // RoutingModule,
+    RoutingModule,
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
