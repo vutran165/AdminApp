@@ -32,9 +32,6 @@ export class AppComponent {
   //   this.menuState = this.menuState === 'out' ? 'in' : 'out';
   // }
 
-  faAlignLeft = faAlignLeft ;
-  faUser =faUser;
-
 
 
 }

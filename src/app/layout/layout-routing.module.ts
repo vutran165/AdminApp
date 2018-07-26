@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import {Routes, RouterModule} from '@angular/router';
 
 // all component
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { TypeProductComponent } from '../type-product/type-product.component';
-import { ProductComponent } from '../product/product.component';
-import { UserComponent } from '../user/user.component';
-import { LayoutComponent } from './layout.component';
+import { LayoutComponent } from '../layout/layout.component';
 
 
 
@@ -16,7 +12,7 @@ const routes_layout : Routes = [{
   component: LayoutComponent,
   children: [
     { path:'', redirectTo:'dashboard', pathMatch: 'full'},
-    { path:'dashboard', loadChildren:'app/dashboard/dashboard.module#DashboardModule'},
+    { path:'dashboard', loadChildren:'../dashboard/dashboard.module#DashboardModule'},
     
 ]
 }];

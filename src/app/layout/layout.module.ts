@@ -1,27 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { MenuComponent } from '../menu/menu.component';
-import { ProductComponent } from '../product/product.component';
-import { TypeProductComponent } from '../type-product/type-product.component';
-import { UserComponent } from '../user/user.component';
-import { LayoutRoutingModule } from './layout-routing.module';
-import { LayoutComponent } from './layout.component';
 
-const APP_COMPONENT = [
-  DashboardComponent,
-  MenuComponent,
-  ProductComponent,
-  TypeProductComponent,
-  UserComponent
+import { MenuComponent } from '../menu/menu.component';
+
+import { LayoutRoutingModule } from '../layout/layout-routing.module';
+import { LayoutComponent } from '../layout/layout.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarToggleDirective } from '../directives/sidebar.directive';
+
+
+const APP_COMPONENT = [ 
+  MenuComponent, 
 ];
+
+
+const APP_DIRECTIVES = [
+  SidebarToggleDirective,
+];
+
 
 
 @NgModule({
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    FontAwesomeModule,
   ],
-  declarations: [LayoutComponent]
+  declarations: [LayoutComponent, APP_COMPONENT, APP_DIRECTIVES]
 })
 export class LayoutModule { }

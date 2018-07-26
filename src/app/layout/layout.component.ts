@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-layout',
@@ -11,5 +13,12 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  
+  faAlignLeft = faAlignLeft ;
+  faUser =faUser;
+
+
+
 
 }
