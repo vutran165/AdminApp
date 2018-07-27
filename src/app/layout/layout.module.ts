@@ -9,6 +9,8 @@ import { LayoutComponent } from '../layout/layout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarToggleDirective } from '../directives/sidebar.directive';
 
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const APP_COMPONENT = [ 
   MenuComponent, 
@@ -26,6 +28,7 @@ const APP_DIRECTIVES = [
     CommonModule,
     LayoutRoutingModule,
     FontAwesomeModule,
+    NgbDropdownModule.forRoot()
   ],
   declarations: [LayoutComponent, APP_COMPONENT, APP_DIRECTIVES]
 })

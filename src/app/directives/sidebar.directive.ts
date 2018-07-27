@@ -1,5 +1,6 @@
 import { Directive, HostListener } from '@angular/core';
 
+//  sidebar toggle
 @Directive({
     selector: '[appSidebarToggle]',
 })
@@ -18,3 +19,24 @@ export class SidebarToggleDirective{
     }
 
 }
+
+// dropdown toggle 
+
+@Directive({
+    selector :'[ngDropdownToggle]',
+})
+
+export class  DropdownToggleDirective {
+    constructor() {
+
+    }
+
+    @HostListener('click',['$event'])
+    onclick($event: any)
+    {
+        
+    }
+}
+
+
+
