@@ -6,15 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+
 import { RoutingModule } from './app-routing.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { SidebarToggleDirective } from './directives/sidebar.directive';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
-import { ProductComponent } from './product/product.component';
-import { TypeProductComponent } from './type-product/type-product.component';
-import { LayoutModule } from './layout/layout.module';
+import { AppService } from './app.service';
+
 
 const APP_DIRECTIVES = [
   SidebarToggleDirective,
@@ -23,7 +20,7 @@ const APP_DIRECTIVES = [
 @NgModule({
   declarations: [
     AppComponent,
-    // APP_DIRECTIVES,
+    
   ],
   imports: [
     RoutingModule,
@@ -32,7 +29,7 @@ const APP_DIRECTIVES = [
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

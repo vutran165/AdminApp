@@ -29,6 +29,14 @@
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);     
 }
 
-.dropdown-menu-left {
-    
+.dropdown-submenu.pull-left {
+    float: none !important;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left: -160% !important;
+    margin-left: -2px !important;
+    -webkit-border-radius: 6px 0 6px 6px;
+     -moz-border-radius: 6px 0 6px 6px;
+          border-radius: 6px 0 6px 6px;
 }
