@@ -13,9 +13,9 @@ const routes_layout : Routes = [{
   children: [
     { path:'', redirectTo:'dashboard', pathMatch: 'full'},
     { path:'dashboard', loadChildren:'../dashboard/dashboard.module#DashboardModule'},
-    { path:'product', loadChildren:'../dashboard/dashboard.module#DashboardModule'},
-    { path:'typeproduct', loadChildren:'../dashboard/dashboard.module#DashboardModule'},
-    { path:'user', loadChildren:'../dashboard/dashboard.module#DashboardModule'},
+    { path:'product', loadChildren:'../product/product.module#ProductModule'},
+    { path:'typeproduct', loadChildren:'../type-product/type-product.module#TypeProductModule'},
+    { path:'user', loadChildren:'../user/user.module#UserModule'},
     
 ]
 }];

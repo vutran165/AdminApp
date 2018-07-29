@@ -4,18 +4,22 @@
     </div>
     <div class="sidebar-main">
            <div class="list-group">
-               <a class="list-group-item">
+               <a class="list-group-item" [routerLink]="['/dashboard']" >
                    <fa-icon [icon]="faTh"></fa-icon>
                    &nbsp;Dashboard
                </a>
-               <a class="list-group-item">
+               <a class="list-group-item" [routerLink]="['/product']" >
                    <fa-icon [icon]="faChartBar"></fa-icon>
-                   &nbsp;Menu 1
+                   &nbsp;Product
                </a>
-               <a class="list-group-item">
+               <a class="list-group-item" [routerLink]="['/typeproduct']" >
                     <fa-icon [icon]="faServer"></fa-icon>   
-                    &nbsp;Menu 2
+                    &nbsp;Type Product
                </a>
+               <a class="list-group-item" [routerLink]="['/user']" >
+                <fa-icon [icon]="faUser"></fa-icon>   
+                &nbsp;User
+                 </a>
                <div class="nested-menu">
                    <a class="list-group-item" (click)="addExpandClass('open')">SubMenu</a>
                    <li class="nested" [class.expand]="showMenu === 'open'">
