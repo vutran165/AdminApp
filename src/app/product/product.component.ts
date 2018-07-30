@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { CreateComponent } from './create/create.component';
+
 
 @Component({
   selector: 'app-product',
@@ -13,8 +15,13 @@ export class ProductComponent implements OnInit {
   faPlus = faPlus;
   
   closeResult: string;
+  constructor(private modalService: NgbModal) {}
 
-  constructor(private modalService: NgbModal) { }
+  open() {
+    const modalRef = this.modalService.open(CreateComponent);
+    modalRef.componentInstance.name = 'World';
+  }
+
 
   // open(content) {
   //   this.modalService.open(content).result.then((result) => {
@@ -38,17 +45,3 @@ export class ProductComponent implements OnInit {
   }
 
 }
-
-
-//add component
-@Component({
-  selector:'add-product',
-  templateUrl:'./product-add.html',
-})
-
-export class ProductAddComponent {
-
- 
-
-}
-

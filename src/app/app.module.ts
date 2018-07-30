@@ -11,6 +11,7 @@ import { RoutingModule } from './app-routing.module';
 
 import { SidebarToggleDirective } from './directives/sidebar.directive';
 import { AppService } from './app.service';
+import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const APP_DIRECTIVES = [
@@ -28,6 +29,8 @@ const APP_DIRECTIVES = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgbDropdownModule.forRoot(),
+    // NgbModule.forRoot(),
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
