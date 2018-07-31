@@ -7,6 +7,7 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NameCommon } from '../shared/name.common';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
   ],
   providers:[NgbActiveModal],
-  entryComponents:[CreateComponent],
+  entryComponents:[CreateComponent, EditComponent, DeleteComponent],
   declarations:[ProductComponent, CreateComponent, EditComponent, DeleteComponent]
 })
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPenSquare, faRecycle, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 @Component({
@@ -13,33 +15,23 @@ import { CreateComponent } from './create/create.component';
 export class ProductComponent implements OnInit {
 
   faPlus = faPlus;
+  faPenSquare = faPenSquare;
+  faTrash = faTrash;
   
-  closeResult: string;
   constructor(private modalService: NgbModal) {}
 
-  open() {
-    const modalRef = this.modalService.open(CreateComponent);
+  add() {
+    const modalRef = this.modalService.open(CreateComponent, {size: 'lg'});
     modalRef.componentInstance.name = 'World';
   }
 
+  edit() {
+     this.modalService.open(EditComponent, {size: 'lg'});
+  }
 
-  // open(content) {
-  //   this.modalService.open(content).result.then((result) => {
-  //     this.closeResult = `Closed with: ${result}`;
-  //   }, (reason) => {
-  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //   });
-  // }
-
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return  `with: ${reason}`;
-  //   }
-  // }
+  delete() {
+    this.modalService.open(DeleteComponent, {size: 'lg'});
+  }
 
   ngOnInit() {
   }

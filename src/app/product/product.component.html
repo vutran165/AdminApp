@@ -5,7 +5,7 @@
 
           </div>
           <div class="col text-right">
-              <button type="button" class="btn btn-outline-primary" (click)="open()">
+              <button type="button" class="btn btn-outline-primary" (click)="add()">
                   <fa-icon [icon]="faPlus"></fa-icon>
               </button>
           </div>
@@ -19,6 +19,7 @@
                       <th scope="col">First</th>
                       <th scope="col">Last</th>
                       <th scope="col">Product</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -27,6 +28,14 @@
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary" (click)="edit()">
+                            <fa-icon [icon]="faPenSquare"></fa-icon>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" (click)="delete()">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
@@ -40,11 +49,7 @@
                       <td>Otto</td>
                       <td>@mdo</td>
                     </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
+                    
                   </tbody>
                 </table>
           </div>
