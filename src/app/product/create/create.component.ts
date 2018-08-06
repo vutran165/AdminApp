@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ProductService } from '../product.service';
 
 
 @Component({
@@ -10,13 +11,20 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class CreateComponent implements OnInit {
 
   @Input() name;
+  
 
-  constructor(public activeModal: NgbActiveModal ) {
+  constructor(public activeModal: NgbActiveModal, private service: ProductService ) {
      
    }
 
   ngOnInit(){
     
   }
+
+  Save() {
+
+  }
+
+
 
 }

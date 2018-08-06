@@ -7,11 +7,13 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { NameCommon } from '../shared/name.common';
+import { HttpClientModule } from '../../../node_modules/@angular/common/http';
+
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     ProducRoutingModule,
     FontAwesomeModule,
     NgbModule.forRoot(),

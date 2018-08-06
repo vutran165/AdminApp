@@ -38,6 +38,7 @@ var Connection = require('tedious').Connection;
     }
 
     function executeStatement() {  
+        debugger;
         request = new Request("SELECT s.Name, s.SalesPersonID FROM [Sales].[Store] s;", function(err) {  
         if (err) {  
             console.log(err);}  
@@ -60,3 +61,11 @@ var Connection = require('tedious').Connection;
         });  
         connection.execSql(request);  
     }
+
+    var express = require('express');
+    var app = express();
+
+    app.get('/', function(req, res) {
+        
+    })
+    
