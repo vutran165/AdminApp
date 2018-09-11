@@ -4,6 +4,9 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
+import { ProductService } from './product.service';
+import { HttpClientJsonpModule } from '@angular/common/http';
+// import {HttpCLient}
 
 
 @Component({
@@ -18,7 +21,8 @@ export class ProductComponent implements OnInit {
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   
-  constructor(private modalService: NgbModal) {}
+  
+  constructor(private modalService: NgbModal, private service: ProductService, private httpclient: HttpClientJsonpModule) {}
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, {size: 'lg'});
@@ -34,6 +38,12 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
+     this.getAll();
+  }
+
+  getAll() {
+    console.log(this.service.getAllProduct());
+    return this.service.getAllProduct();
   }
 
 }

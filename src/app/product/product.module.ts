@@ -8,6 +8,7 @@ import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { ProductService } from './product.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { HttpClientModule } from '../../../node_modules/@angular/common/http';
     FontAwesomeModule,
     NgbModule.forRoot(),
   ],
-  providers:[NgbActiveModal],
+  providers:[NgbActiveModal, ProductService],
   entryComponents:[CreateComponent, EditComponent, DeleteComponent],
   declarations:[ProductComponent, CreateComponent, EditComponent, DeleteComponent]
 })

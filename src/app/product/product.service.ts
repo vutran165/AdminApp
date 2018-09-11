@@ -16,23 +16,23 @@ export class ProductService {
    }
 
    getAllProduct(): Observable<ProductEntity[]>{
-      return this.http.get<ProductEntity[]>('http://localhost:1433/api-nodejs/productjs');
+      return this.http.get<ProductEntity[]>('http://localhost:8080/api/getAllProduct');
    }
 
    getProduct(): Observable<ProductEntity> {
-      return this.http.get<ProductEntity>('http://localhost:1433/api-nodejs/productjs');
+      return this.http.get<ProductEntity>('http://localhost:8080/api-nodejs/productjs');
    }
 
    add(): Observable<ProductEntity> {
-     return this.http.post<ProductEntity>('http://localhost:1433/api-nodejs/productjs', this.entity);
+     return this.http.post<ProductEntity>('http://localhost:8080/api-nodejs/productjs', this.entity);
    }
 
    update(): Observable<ProductEntity> {
-     return this.http.put<ProductEntity>('http://localhost:1433/api-nodejs/productjs', this.entity);
+     return this.http.put<ProductEntity>('http://localhost:8080/api-nodejs/productjs', this.entity);
    }
 
    delete(id: string) {
-     return this.http.delete('http://localhost:1433/api-nodejs/productjs' + id);
+     return this.http.delete('http://localhost:8080/api-nodejs/productjs' + id);
    }
 
 }
