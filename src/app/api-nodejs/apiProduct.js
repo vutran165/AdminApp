@@ -71,6 +71,7 @@ app.get("/api/user", function(req , res){
 app.get("/api/getAllProduct", function(req, res){
     var query = "exec getAllProduct;";
     executeQuery (req, query, res);
+    
 });
 
 //POST API
