@@ -22,7 +22,8 @@ export class ProductComponent implements OnInit {
   faTrash = faTrash;
   
   
-  constructor(private modalService: NgbModal, private service: ProductService, private httpclient: HttpClientJsonpModule) {}
+  constructor(private modalService: NgbModal, private service: ProductService
+    , private httpclient: HttpClientJsonpModule) {}
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, {size: 'lg'});
@@ -42,8 +43,11 @@ export class ProductComponent implements OnInit {
   }
 
   getAll() {
-    console.log(this.service.getAllProduct());
-    return this.service.getAllProduct();
+    this.service.getAllProduct().subscribe((res)=>{
+      console.log(res );
+    }, (error)=> {
+      console.log('error', error);
+    });// return this.service.getAllProduct();
   }
 
 }
