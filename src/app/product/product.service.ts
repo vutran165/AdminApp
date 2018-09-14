@@ -8,8 +8,6 @@ import 'rxjs/add/operator/map';
 
 export class ProductService {
 
-  private product: ProductEntity;
-  lstproduct: Observable<ProductEntity>[];
 
   constructor(private http: HttpClient) {
 
