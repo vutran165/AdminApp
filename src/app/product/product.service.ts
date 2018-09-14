@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from '../../../node_modules/rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ProductEntity } from '../model/product';
-
-// const api = ''
-// const urlString = 'http:\\localhost:1433\' + ;
-
+import 'rxjs/add/operator/map';
 
 @Injectable()
 
 export class ProductService {
 
-  constructor(private http: HttpClient, private entity: ProductEntity) {
+  private product: ProductEntity;
+  lstproduct: Observable<ProductEntity>[];
+
+  constructor(private http: HttpClient) {
 
    }
 
@@ -24,11 +24,11 @@ export class ProductService {
    }
 
    add() {
-     return this.http.post('http://localhost:8080/api-nodejs/productjs', this.entity);
+     return this.http.post('http://localhost:8080/api-nodejs/productjs', this.product);
    }
 
-   update() {
-     return this.http.put('http://localhost:8080/api-nodejs/productjs', this.entity);
+   update(id: string) {
+     return this.http.put('http://localhost:8080/api-nodejs/productjs', this.product);
    }
 
    delete(id: string) {

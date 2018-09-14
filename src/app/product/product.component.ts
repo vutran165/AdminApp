@@ -6,6 +6,8 @@ import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ProductService } from './product.service';
 import { HttpClientJsonpModule } from '@angular/common/http';
+import { ProductEntity } from '../model/product';
+import { Observable } from 'rxjs/Observable';
 // import {HttpCLient}
 
 
@@ -22,8 +24,12 @@ export class ProductComponent implements OnInit {
   faTrash = faTrash;
   
   
-  constructor(private modalService: NgbModal, private service: ProductService
-    , private httpclient: HttpClientJsonpModule) {}
+  private product: ProductEntity;
+  lstproduct: Observable<ProductEntity>[];
+  list : Object;
+  
+  constructor(private modalService: NgbModal, private service: ProductService) 
+  {}
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, {size: 'lg'});
@@ -44,10 +50,11 @@ export class ProductComponent implements OnInit {
 
   getAll() {
     this.service.getAllProduct().subscribe((res)=>{
-      console.log(res );
+        console.log(res);
+        
     }, (error)=> {
       console.log('error', error);
-    });// return this.service.getAllProduct();
+    });
   }
 
 }
