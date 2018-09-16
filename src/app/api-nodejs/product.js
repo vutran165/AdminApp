@@ -1,88 +1,95 @@
-//initiallising connection string
-var Connection = require('tedious').Connection;  
-    var config = {  
-        userName: 'sa',  
-        password: 'admin@123',  
-        server: 'localhost',  
-        instanceName:'TRANVUSQL',
-        // server: 'TRANTUANVU-PC\TRANVUSQL',
-        // port: 1433,
-        // When you connect to Azure SQL Database, you need these next options.  
-        options: { database: 'AdventureWorks2014'}  
-    };  
-   
-    var connection = new Connection(config);  
-    connection.on('connect', function(err) {  
-        // If no error, then good to proceed.  
-        if(err)
-        {
-            console.log(err);
-        } else {
-            console.log("Connected");  
-        
-            // async.waterfall([executeStatement],Complete)
-            executeStatement();
-        }
-       
-    });  
+// //Initiallising node modules
+// var express = require("express");
+// var bodyParser = require("body-parser");
+// var sql = require("mssql");
+// var app = express();
 
-    var Request = require('tedious').Request;  
-    var TYPES = require('tedious').TYPES;  
+// // Body Parser Middleware
+// app.use(bodyParser.json());
 
-    function Complete(err, result) {
-        if(err) 
-        {
-            callback(err);
-        } else {
-            console.log("Done!");
-        }
-    }
+// //CORS Middleware
+// app.use(function (req, res, next) {
+//     //Enabling CORS 
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, contentType,Content-Type, Accept, Authorization");
+//     next();
+// });
+
+// //Setting up server
+// var server = app.listen(process.env.PORT || 8080, function () {
+//     var port = server.address().port;
+//     console.log("App now running on port", port);
+// });
+
+// //Initiallising connection string
+// var dbConfig = {
+//     user: 'sa',
+//     password: 'admin@123',
+//     // server: 'TRANTUANVU-PC',
+//     server:'TRANTUANVU',
+//     database: 'AdventureWorks2014',
+//     options: {
+//         instanceName: 'TRANVUSQL'
+//     }
+// };
+
+// //Function to connect to database and execute query
+// var executeQuery = function (req, query, res) {
+
+//     sql.connect(dbConfig, function (err) {
+//         if (err) {
+//             console.log("Error while connecting database :- " + err);
+//             res.send(err);
+//             sql.close();
+//         }
+//         else {
+//             // create Request object
+//             var request = new sql.Request();
+//             // query to the database
+//             request.query(query, function (err, recordset) {
+//                 if (err) {
+//                     console.log("Error while querying database :- " + err);
+//                     res.send(err);
+//                     sql.close();
+//                 }
+//                 else {
+//                     res.send(recordset);               
+//                     sql.close();
+                   
+//                 }
+//             });
+//         }
+//     });
+// }
 
 
-    function executeStatement() {  
-        request = new Request("exec getAllProduct;", function(err) {  
-        if (err) {  
-            console.log(err);}  
-        });  
-        var result = "";  
-        request.on('row', function(columns) {  
-            columns.forEach(function(column) {  
-              if (column.value === null) {  
-                console.log('NULL');  
-              } else {  
-                result+= column.value + " ";  
-              }  
-            });  
-            console.log(result);  
-            result ="";  
-        });  
 
-        request.on('done', function(rowCount, more) {  
-        console.log(rowCount + ' rows returned');  
-        });  
-        connection.execSql(request);  
-    }
+var connection = require('./app.js');
 
-    var express = require('express');
-    var app = express();
-    var bodyParser = require("body-parser");
+//GET API
+connection.app.get("/api/user", function (req, res) {
+    var query = "select * from [user]";
+    connection.executeQuery(req, query);
+});
 
-    // Body Parser Middleware
-    app.use(bodyParser.json());
-
-    //Cors middleware
-    app.use(function(req,res,next){
-        //enable cors
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, contentType,Content-Type, Accept, Authorization");
-        next();
-    })
-
-    //setting up server
-    var server = app.listen(process.env.PORT || 8080, function(){
-        var port = server.address().port;
-        console .log("port is opening !!!", port);
-    });
-
+//GET API ALL PRODUCT
+connection.app.get("/api/getAllProduct", function (req, res) {
+    var query = "exec getAllProduct;";
+    connection.executeQuery(req, query, res);
     
+});
+
+//POST API
+
+//PUT API
+connection.app.put("/api/user/:id", function (req, res) {
+    var query = "UPDATE [user] SET Name= " + req.body.Name + " , Email=  " + req.body.Email + "  WHERE Id= " + req.params.id;
+    connection.executeQuery(res, query);
+});
+
+// DELETE API
+connection.app.delete("/api/user /:id", function (req, res) {
+    var query = "DELETE FROM [user] WHERE Id=" + req.params.id;
+    executeQuery(res, query);
+});

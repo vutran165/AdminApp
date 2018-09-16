@@ -29,7 +29,7 @@ const APP_DIRECTIVES = [
     CommonModule,
     LayoutRoutingModule,
     FontAwesomeModule,
-    NgbDropdownModule.forRoot(),  
+    // NgbDropdownModule.forRoot(),  
   ],
   exports: [
     FontAwesomeModule

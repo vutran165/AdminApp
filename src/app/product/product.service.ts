@@ -8,6 +8,9 @@ import 'rxjs/add/operator/map';
 
 export class ProductService {
 
+  private product: ProductEntity;
+  lstproduct: ProductEntity[];
+  
 
   constructor(private http: HttpClient) {
 
@@ -21,13 +24,13 @@ export class ProductService {
       return this.http.get('http://localhost:8080/api-nodejs/productjs');
    }
 
-   add() {
-     return this.http.post('http://localhost:8080/api-nodejs/productjs', this.product);
-   }
+  //  add() {
+  //    return this.http.post('http://localhost:8080/api-nodejs/productjs', this.product);
+  //  }
 
-   update(id: string) {
-     return this.http.put('http://localhost:8080/api-nodejs/productjs', this.product);
-   }
+  //  update(id: string) {
+  //    return this.http.put('http://localhost:8080/api-nodejs/productjs', this.product);
+  //  }
 
    delete(id: string) {
      return this.http.delete('http://localhost:8080/api-nodejs/productjs' + id);

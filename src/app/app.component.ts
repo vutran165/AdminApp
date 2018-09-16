@@ -26,12 +26,4 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'app';
 
- // public menuState: string = 'out';
-
-  // toggleMenu() {
-  //   this.menuState = this.menuState === 'out' ? 'in' : 'out';
-  // }
-
-
-
 }

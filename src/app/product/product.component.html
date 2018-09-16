@@ -16,18 +16,20 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Product</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Product Number</th>
+                      <th scope="col">Safety Stock Level</th>
+                      <th scope="col">ReorderPoint</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
+                    <tr *ngFor="let product of list">
+                      <th scope="row">{{index + 1}}</th>
+                      <td>{{product.Name}}</td>
+                      <td>{{product.ProductNumber}}</td>
+                      <td>{{product.SafetyStockLevel}}</td>
+                      <td>{{product.ReorderPoint}}</td>
                       <td>
                         <button type="button" class="btn btn-outline-primary" (click)="edit()">
                             <fa-icon [icon]="faPenSquare"></fa-icon>
@@ -37,23 +39,30 @@
                         </button>
                       </td>
                     </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    
                   </tbody>
                 </table>
+               
           </div>
           
-        <div class="card-footer"></div>
+        <div class="card-footer">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#"></a></li>
+              <li class="page-item"><a class="page-link" href="#"></a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </div>
 </div>

@@ -49,8 +49,9 @@ export class ProductComponent implements OnInit {
   }
 
   getAll() {
-    this.service.getAllProduct().subscribe((res)=>{
-        console.log(res);
+    this.service.getAllProduct().subscribe(()=>{
+      // this.list = res.recordset;
+      // console.log(res);
         
     }, (error)=> {
       console.log('error', error);
